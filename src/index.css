@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+button.ml-auto.inline-flex.items-center.rounded-lg.bg-transparent.p-1\.5.text-sm.text-gray-400.hover\:bg-gray-200.hover\:text-gray-900.dark\:hover\:bg-gray-600.dark\:hover\:text-white {
+    display: none;
+}
+
+button.group.flex.items-center.justify-center.p-0\.5.text-center.font-medium.relative.focus\:z-10.focus\:outline-none.text-white.bg-cyan-700.border.border-transparent.enabled\:hover\:bg-cyan-800.focus\:ring-cyan-300.dark\:bg-cyan-600.dark\:enabled\:hover\:bg-cyan-700.dark\:focus\:ring-cyan-800.rounded-lg.focus\:ring-2 {
+    height: 40px;
+    margin-bottom: 2px;
+    width: 77px;
+}
+
+button.group.flex.items-center.justify-center.p-0\.5.text-center.font-medium.relative.focus\:z-10.focus\:outline-none.text-white.bg-red-700.border.border-transparent.enabled\:hover\:bg-red-800.focus\:ring-red-300.dark\:bg-red-600.dark\:enabled\:hover\:bg-red-700.dark\:focus\:ring-red-900.rounded-lg.focus\:ring-2 {
+    height: 40px;
+    width: 77px;
+}
+
+ul.mt-4.flex.flex-col.md\:mt-0.md\:flex-row.md\:space-x-8.md\:text-sm.md\:font-medium {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .max-w-md {
+      width: 100%;
+    }
+  }
+  
+  .loginButton {
+    width: 100% !important;
+}
+
