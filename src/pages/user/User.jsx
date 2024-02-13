@@ -185,7 +185,7 @@ export default function User() {
       </div>
       <Modal show={isModalOpen} onHide={cancelEdit}>
         <div>
-          <Modal.Header closeButton={false}>Crear nuevo Usuario</Modal.Header>
+          <Modal.Header>Crear nuevo Usuario</Modal.Header>
           <Modal.Body>
             <form>
               <div className="mb-2 block">
