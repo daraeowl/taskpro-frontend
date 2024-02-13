@@ -31,6 +31,3 @@ Si deseas contribuir al proyecto frontend, sigue estos pasos:
 4. Sube tus cambios a tu repositorio: `git push origin feature/NombreCaracteristica`.
 5. Abre un pull request en este repositorio.
 
-## Licencia
-
-Este proyecto frontend está bajo la Licencia MIT. Para más detalles, consulta el archivo LICENSE.
