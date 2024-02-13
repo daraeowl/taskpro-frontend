@@ -156,7 +156,6 @@ export default function Task() {
 
   return (
     <div className="overflow-x-auto">
-      <h1 className="text-2xl font-bold mb-4">Tareas</h1>
       {/* Crear Tareas button */}
       <div className="flex justify-end mb-4">
         <Button onClick={addTask} gradientDuoTone="greenToBlue">

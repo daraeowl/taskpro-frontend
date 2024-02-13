@@ -155,7 +155,6 @@ export default function User() {
 
   return (
     <div className="overflow-x-auto">
-      <h1 className="text-2xl font-bold mb-4">Users</h1>
       <div className="flex justify-end mb-4">
         <Button onClick={addUser} gradientDuoTone="greenToBlue">
           Crear nuevo Usuario
@@ -199,7 +198,6 @@ export default function User() {
                   name="email"
                   value={editUser ? editUser.email : newUser.email}
                   onChange={handleInputChange}
-                 
                 />
               </div>
               {/* Render the password input field only in "create" mode */}
