@@ -190,9 +190,9 @@ export default function Task() {
         </Table>
       </div>
       {/* Edit task modal */}
-      <Modal show={isModalOpen} onHide={cancelEdit}>
+      <Modal show={isModalOpen} onClose={cancelEdit}>
         <div>
-          <Modal.Header closeButton={false}>
+          <Modal.Header>
             {editTask ? "Editar Tarea" : "Crear Tarea"}
           </Modal.Header>
           <Modal.Body>

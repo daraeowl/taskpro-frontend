@@ -165,7 +165,7 @@ export default function User() {
           <Table.Head>
             <Table.HeadCell>ID</Table.HeadCell>
             <Table.HeadCell>Email</Table.HeadCell>
-            <Table.HeadCell>Actions</Table.HeadCell>
+            <Table.HeadCell>Acciones</Table.HeadCell>
           </Table.Head>
           <Table.Body className="divide-y divide-gray-200 bg-white">
             {users.map((user) => (
@@ -173,9 +173,9 @@ export default function User() {
                 <Table.Cell>{user.id}</Table.Cell>
                 <Table.Cell>{user.email}</Table.Cell>
                 <Table.Cell>
-                  <Button onClick={() => handleEdit(user)}>Edit</Button>
+                  <Button onClick={() => handleEdit(user)}>Editar</Button>
                   <Button color="failure" onClick={() => handleDelete(user.id)}>
-                    Delete
+                    Eliminar
                   </Button>
                 </Table.Cell>
               </Table.Row>
@@ -183,13 +183,17 @@ export default function User() {
           </Table.Body>
         </Table>
       </div>
-      <Modal show={isModalOpen} onHide={cancelEdit}>
+      <Modal show={isModalOpen} onClose={cancelEdit}>
         <div>
-          <Modal.Header>Crear nuevo Usuario</Modal.Header>
+          {/* Dynamically change modal header based on editUser state */}
+          <Modal.Header>
+            {editUser ? "Editar Usuario" : "Crear nuevo Usuario"}
+          </Modal.Header>
           <Modal.Body>
             <form>
+              {/* Input fields for email and password */}
               <div className="mb-2 block">
-                <Label htmlFor="email" value="Email">
+                <Label htmlFor="email" >
                   Email:
                 </Label>
                 <TextInput
@@ -201,38 +205,34 @@ export default function User() {
                 />
               </div>
               {/* Render the password input field only in "create" mode */}
-              {isModalOpen === "create" && (
+              {editUser === null && (
                 <div className="mb-2 block">
                   <Label htmlFor="password" className="block">
-                    Password:
+                    Contraseña:
                   </Label>
                   <TextInput
                     type="password"
                     id="password"
                     name="password"
-                    value={editUser ? editUser.password : newUser.password}
+                    value={newUser.password}
                     onChange={handleInputChange}
                   />
                 </div>
               )}
             </form>
           </Modal.Body>
-
-          <div className="buttonContainer">
-            <Modal.Footer>
-              <Button
-                onClick={isModalOpen === "create" ? createUser : saveChanges}
-                gradientDuoTone="greenToBlue"
-              >
-                {isModalOpen === "create"
-                  ? "Guardar Proyecto"
-                  : "Guardar Cambios"}
-              </Button>
-              <Button onClick={cancelEdit} color="gray">
-                Cancelar
-              </Button>
-            </Modal.Footer>
-          </div>
+          {/* Buttons to save changes or cancel action */}
+          <Modal.Footer>
+            <Button
+              onClick={editUser ? saveChanges : createUser}
+              gradientDuoTone="greenToBlue"
+            >
+              {editUser ? "Guardar Cambios" : "Registrar Usuario"}
+            </Button>
+            <Button onClick={cancelEdit} color="gray">
+              Cancelar
+            </Button>
+          </Modal.Footer>
         </div>
       </Modal>
     </div>

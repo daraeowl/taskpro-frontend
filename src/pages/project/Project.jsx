@@ -173,7 +173,8 @@ const handleInputChange = (e) => {
           Crear nuevo Proyecto
         </Button>
       </div>
-      {/* Projects table */}
+      <div className="overflow-x-auto">
+
       <Table hoverable>
         <Table.Head>
           <Table.HeadCell>Id</Table.HeadCell>
@@ -202,10 +203,11 @@ const handleInputChange = (e) => {
           ))}
         </Table.Body>
       </Table>
+      </div>
       {/* Edit project modal */}
-      <Modal show={isModalOpen !== false} onHide={cancelEdit}>
+      <Modal show={isModalOpen !== false} onClose={cancelEdit}>
         <div>
-          <Modal.Header closeButton={false}>
+          <Modal.Header>
             {isModalOpen === "create" ? "Crear Proyecto" : "Editar Proyecto"}
           </Modal.Header>
           <Modal.Body>
